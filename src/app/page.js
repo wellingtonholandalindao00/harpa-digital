@@ -22,7 +22,7 @@ export default function Home() {
   const { itens, total, paginaAtual, totalPaginas } = paginar(filtrados, pagina)
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8">
+    <div className="mx-auto max-w-6xl px-6 sm:px-12 py-8">
       <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-xl font-bold">Harpa Cristã</h1>

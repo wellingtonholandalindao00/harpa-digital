@@ -23,7 +23,7 @@ export default function HinoViewer({ hino }) {
   const proximo = idx < hinos.length - 1 ? hinos[idx + 1] : null
 
   return (
-    <article className="mx-auto max-w-2xl">
+    <article className="mx-auto max-w-4xl px-4 sm:px-8">
       <header className="mb-8 text-center">
         <span className="text-sm font-medium text-zinc-400 dark:text-zinc-500">
           Hino {hino.numero}
