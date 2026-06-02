@@ -38,6 +38,7 @@ export default function NavBar() {
   function alterarTema(novo) {
     setTema(novo)
     localStorage.setItem('harpa-digital-tema', novo)
+    document.querySelector('meta[name="color-scheme"]')?.setAttribute('content', novo === 'escuro' ? 'dark' : 'light')
     setMenuAberto(false)
   }
 

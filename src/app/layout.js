@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Harpa Digital",
   description: "Harpa Cristã completa — letra, busca e favoritos",
+  other: { 'color-scheme': 'light dark' },
 };
 
 export default function RootLayout({ children }) {
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
             var t = localStorage.getItem('harpa-digital-tema');
             if (!t) { t = matchMedia('(prefers-color-scheme:dark)').matches ? 'escuro' : 'claro'; }
             if (t === 'escuro') document.documentElement.classList.add('dark');
+            document.querySelector('meta[name="color-scheme"]').setAttribute('content', t === 'escuro' ? 'dark' : 'light');
           })();
         ` }} />
         <NavBar />
