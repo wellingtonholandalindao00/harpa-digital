@@ -62,7 +62,7 @@ export default function Home() {
       {itens.length === 0 ? (
         <div className="flex flex-1 items-center justify-center py-20 text-center">
           <div>
-            <p className="text-lg font-medium text-zinc-500 dark:text-zinc-400">
+            <p className="text-lg font-medium text-zinc-500 dark:text-zinc-200">
               {mostrarFavoritos ? 'Nenhum favorito' : 'Nenhum hino encontrado'}
             </p>
             <p className="mt-1 text-sm text-zinc-400 dark:text-zinc-500">

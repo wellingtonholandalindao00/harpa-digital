@@ -51,11 +51,11 @@ export default function HinoViewer({ hino }) {
         </button>
       </header>
 
-      <section className="space-y-6 text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
+      <section className="space-y-6 text-lg leading-relaxed text-zinc-700 dark:text-zinc-100">
         {hino.versos.map((verso, i) => (
           <div key={i}>
             {hino.temCoro && i > 0 && (
-              <div className="my-4 border-l-4 border-zinc-200 pl-4 text-base italic text-zinc-500 dark:border-zinc-700 dark:text-zinc-400">
+              <div className="my-4 border-l-4 border-zinc-200 pl-4 text-base italic text-zinc-500 dark:border-zinc-700 dark:text-zinc-200">
                 {hino.coro.split('\n').map((linha, j) => (
                   <p key={j}>{linha}</p>
                 ))}
@@ -67,7 +67,7 @@ export default function HinoViewer({ hino }) {
           </div>
         ))}
         {hino.temCoro && (
-          <div className="border-l-4 border-zinc-200 pl-4 text-base italic text-zinc-500 dark:border-zinc-700 dark:text-zinc-400">
+          <div className="border-l-4 border-zinc-200 pl-4 text-base italic text-zinc-500 dark:border-zinc-700 dark:text-zinc-200">
             {hino.coro.split('\n').map((linha, j) => (
               <p key={j}>{linha}</p>
             ))}

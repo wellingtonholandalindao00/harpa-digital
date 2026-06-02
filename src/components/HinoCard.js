@@ -24,7 +24,7 @@ export default function HinoCard({ hino, onFavChange }) {
       href={`/hino/${hino.id}`}
       className="group relative flex items-center gap-4 rounded-xl border border-zinc-200 bg-white p-4 transition hover:border-zinc-300 hover:shadow-sm dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-700"
     >
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-zinc-100 text-sm font-bold text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-zinc-100 text-sm font-bold text-zinc-500 dark:bg-zinc-800 dark:text-zinc-200">
         {hino.numero}
       </span>
       <span className="flex-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
