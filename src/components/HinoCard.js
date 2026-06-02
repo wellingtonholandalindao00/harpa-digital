@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { isFavorite, toggleFavorite } from '@/lib/favorites'
 import { useState, useEffect } from 'react'
 
-export default function HinoCard({ hino }) {
+export default function HinoCard({ hino, onFavChange }) {
   const [fav, setFav] = useState(false)
 
   useEffect(() => {
@@ -16,6 +16,7 @@ export default function HinoCard({ hino }) {
     e.stopPropagation()
     const novo = toggleFavorite(hino.id)
     setFav(novo)
+    onFavChange?.()
   }
 
   return (
