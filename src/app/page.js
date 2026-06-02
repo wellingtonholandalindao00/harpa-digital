@@ -39,7 +39,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="mx-auto max-w-6xl px-6 sm:px-12 py-8">
+    <div className="mx-auto max-w-6xl px-3 sm:px-12 py-8 pb-20">
       <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-3">
           <button
@@ -81,7 +81,7 @@ export default function Home() {
           </div>
 
           {!buscaAtiva && totalPaginas > 1 && (
-            <div className="mt-8 flex items-center justify-center gap-2">
+            <div className="fixed bottom-0 left-0 right-0 z-10 flex items-center justify-center gap-2 border-t border-zinc-200 bg-white/80 px-4 py-3 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/80">
               <button
                 onClick={() => setPagina(p => Math.max(1, p - 1))}
                 disabled={paginaAtual <= 1}

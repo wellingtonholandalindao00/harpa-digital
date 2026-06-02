@@ -19,8 +19,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function() {
+            var t = localStorage.getItem('harpa-digital-tema');
+            if (!t) { t = matchMedia('(prefers-color-scheme:dark)').matches ? 'escuro' : 'claro'; }
+            if (t === 'escuro') document.documentElement.classList.add('dark');
+          })();
+        ` }} />
         <NavBar />
         <main className="flex-1">
           {children}
