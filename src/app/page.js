@@ -26,6 +26,15 @@ export default function Home() {
     return () => window.removeEventListener('resize', calcular)
   }, [])
 
+  useEffect(() => {
+    function handleToggle() {
+      setMostrarFavoritos(v => !v)
+      setPagina(1)
+    }
+    window.addEventListener('harpa:toggle-fav-filter', handleToggle)
+    return () => window.removeEventListener('harpa:toggle-fav-filter', handleToggle)
+  }, [])
+
   const filtrados = useMemo(() => {
     const resultado = query ? buscarHinos(query) : hinos
     if (!mostrarFavoritos) return resultado
@@ -45,29 +54,10 @@ export default function Home() {
     setFavVersion(v => v + 1)
   }, [])
 
-  const toggleFavFilter = useCallback(() => {
-    setMostrarFavoritos(v => !v)
-    setPagina(1)
-  }, [])
 
   return (
     <div className="mx-auto max-w-6xl px-3 sm:px-12 pt-8">
-      <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center gap-3">
-          <button
-            onClick={toggleFavFilter}
-            className={`inline-flex items-center gap-1.5 rounded-full px-4 min-h-[44px] text-sm transition cursor-pointer active:scale-[0.97] ${
-              mostrarFavoritos
-                ? 'bg-red-50 text-red-600 dark:bg-red-900/30 dark:text-red-400'
-                : 'bg-zinc-100 text-zinc-500 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700'
-            }`}
-          >
-            <svg className={`h-3.5 w-3.5 ${mostrarFavoritos ? 'fill-red-500 text-red-500' : 'fill-none'}`} viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-            </svg>
-            Favoritos
-          </button>
-        </div>
+      <div className="mb-8">
         <SearchBar onSearch={handleSearch} />
       </div>
 
