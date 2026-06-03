@@ -33,7 +33,7 @@ export default function HinoViewer({ hino }) {
         </h1>
         <button
           onClick={handleFav}
-          className={`mt-3 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm transition ${
+          className={`mt-3 inline-flex items-center gap-2 rounded-full px-5 min-h-[44px] text-sm transition cursor-pointer active:scale-[0.97] ${
             fav
               ? 'bg-red-50 text-red-600 dark:bg-red-900/30 dark:text-red-400'
               : 'bg-zinc-100 text-zinc-500 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700'
@@ -79,7 +79,7 @@ export default function HinoViewer({ hino }) {
         {anterior ? (
           <Link
             href={`/hino/${anterior.id}`}
-            className="flex items-center gap-2 text-sm text-zinc-500 transition hover:text-zinc-800 dark:hover:text-zinc-200"
+            className="flex items-center gap-2 py-2 text-sm text-zinc-500 transition hover:text-zinc-800 dark:hover:text-zinc-200 cursor-pointer"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
               <path d="m15 18-6-6 6-6" />
@@ -92,7 +92,7 @@ export default function HinoViewer({ hino }) {
         {proximo ? (
           <Link
             href={`/hino/${proximo.id}`}
-            className="flex items-center gap-2 text-right text-sm text-zinc-500 transition hover:text-zinc-800 dark:hover:text-zinc-200"
+            className="flex items-center gap-2 py-2 text-right text-sm text-zinc-500 transition hover:text-zinc-800 dark:hover:text-zinc-200 cursor-pointer"
           >
             {proximo.numero}. {proximo.titulo}
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">

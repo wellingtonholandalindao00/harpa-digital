@@ -22,7 +22,7 @@ export default function HinoCard({ hino, onFavChange }) {
   return (
     <Link
       href={`/hino/${hino.id}`}
-      className="group relative flex items-center gap-4 rounded-xl border border-zinc-200 bg-white p-4 transition hover:border-zinc-300 hover:shadow-sm dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-700"
+      className="group relative flex items-center gap-4 rounded-xl border border-zinc-200 bg-white p-4 transition hover:border-zinc-300 hover:shadow-sm dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-700 cursor-pointer"
     >
       <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-zinc-100 text-sm font-bold text-zinc-500 dark:bg-zinc-800 dark:text-zinc-200">
         {hino.numero}
@@ -32,7 +32,7 @@ export default function HinoCard({ hino, onFavChange }) {
       </span>
       <button
         onClick={handleFav}
-        className="shrink-0 p-1 text-zinc-300 hover:text-red-400 dark:text-zinc-600 dark:hover:text-red-400"
+        className="flex shrink-0 items-center justify-center min-h-[44px] min-w-[44px] text-zinc-300 hover:text-red-400 dark:text-zinc-600 dark:hover:text-red-400 active:scale-[0.9] transition-transform"
         aria-label={fav ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}
       >
         <svg

@@ -38,7 +38,7 @@ export default function SearchBar({ onSearch }) {
       {value && (
         <button
           onClick={() => setValue('')}
-          className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+          className="absolute right-1 top-1/2 -translate-y-1/2 flex items-center justify-center min-h-[44px] min-w-[44px] text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 active:scale-[0.9] transition-transform"
           aria-label="Limpar busca"
         >
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">

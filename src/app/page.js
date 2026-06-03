@@ -56,7 +56,7 @@ export default function Home() {
         <div className="flex items-center gap-3">
           <button
             onClick={toggleFavFilter}
-            className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm transition ${
+            className={`inline-flex items-center gap-1.5 rounded-full px-4 min-h-[44px] text-sm transition cursor-pointer active:scale-[0.97] ${
               mostrarFavoritos
                 ? 'bg-red-50 text-red-600 dark:bg-red-900/30 dark:text-red-400'
                 : 'bg-zinc-100 text-zinc-500 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700'
@@ -97,7 +97,7 @@ export default function Home() {
               <button
                 onClick={() => setPagina(p => Math.max(1, p - 1))}
                 disabled={paginaAtual <= 1}
-                className="rounded-lg px-3 py-1.5 text-sm text-zinc-500 transition hover:bg-zinc-100 disabled:opacity-30 dark:hover:bg-zinc-800"
+                className="rounded-lg px-4 min-h-[44px] text-sm text-zinc-500 transition hover:bg-zinc-100 disabled:opacity-30 dark:hover:bg-zinc-800 cursor-pointer active:scale-[0.97]"
               >
                 Anterior
               </button>
@@ -107,7 +107,7 @@ export default function Home() {
               <button
                 onClick={() => setPagina(p => Math.min(totalPaginas, p + 1))}
                 disabled={paginaAtual >= totalPaginas}
-                className="rounded-lg px-3 py-1.5 text-sm text-zinc-500 transition hover:bg-zinc-100 disabled:opacity-30 dark:hover:bg-zinc-800"
+                className="rounded-lg px-4 min-h-[44px] text-sm text-zinc-500 transition hover:bg-zinc-100 disabled:opacity-30 dark:hover:bg-zinc-800 cursor-pointer active:scale-[0.97]"
               >
                 Próximo
               </button>
