@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useMemo } from 'react'
+import { useState, useCallback, useMemo, useEffect } from 'react'
 import { carregarHinos, buscarHinos, paginar } from '@/lib/hinos'
 import { getFavorites } from '@/lib/favorites'
 import HinoCard from '@/components/HinoCard'
@@ -13,6 +13,18 @@ export default function Home() {
   const [pagina, setPagina] = useState(1)
   const [mostrarFavoritos, setMostrarFavoritos] = useState(false)
   const [favVersion, setFavVersion] = useState(0)
+  const [porPagina, setPorPagina] = useState(6)
+
+  useEffect(() => {
+    function calcular() {
+      const altura = window.innerHeight
+      const cabem = Math.max(2, Math.floor((altura - 200) / 84))
+      setPorPagina(cabem)
+    }
+    calcular()
+    window.addEventListener('resize', calcular)
+    return () => window.removeEventListener('resize', calcular)
+  }, [])
 
   const filtrados = useMemo(() => {
     const resultado = query ? buscarHinos(query) : hinos
@@ -22,7 +34,7 @@ export default function Home() {
   }, [query, mostrarFavoritos, favVersion])
 
   const buscaAtiva = query.length > 0 || mostrarFavoritos
-  const { itens, total, paginaAtual, totalPaginas } = paginar(filtrados, pagina)
+  const { itens, total, paginaAtual, totalPaginas } = paginar(filtrados, pagina, porPagina)
 
   const handleSearch = useCallback((q) => {
     setQuery(q)
