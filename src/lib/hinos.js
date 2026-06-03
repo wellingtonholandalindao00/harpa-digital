@@ -64,7 +64,7 @@ export function buscarHinos(query) {
   })
 }
 
-export function paginar(hinos, pagina = 1, porPagina = 8) {
+export function paginar(hinos, pagina = 1, porPagina = 6) {
   const inicio = (pagina - 1) * porPagina
   return {
     itens: hinos.slice(inicio, inicio + porPagina),

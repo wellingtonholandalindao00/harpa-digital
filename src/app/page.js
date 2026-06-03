@@ -39,7 +39,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="mx-auto max-w-6xl px-3 sm:px-12 py-8 pb-20">
+    <div className="mx-auto max-w-6xl px-3 sm:px-12 pt-8">
       <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-3">
           <button
